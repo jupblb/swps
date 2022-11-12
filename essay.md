@@ -8,6 +8,12 @@ titlepage: true
 vim: spell spelllang=en_us
 ---
 
-Testing.
+## What is ADHD?
+
+## What is eye tracking technology?
+
+## How can the eye tracking technology be useful to people diagnosed with ADHD?
+
+## Summary
 
 ## Bibliography

@@ -11,7 +11,7 @@ essay-swps.pdf: essay.md swps.yaml
 		--template ./eisvogel.tex
 
 clean:
-	rm -f essay.pdf essay-swps.pdf
+	rm -f essay.pdf essay-swps.pdf indent.log
 
 format:
 	pandoc -f markdown -s -t markdown --columns=80 essay.md -o essay.md
