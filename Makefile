@@ -1,10 +1,10 @@
-essay.pdf: essay.md default.yaml
+essay.pdf: essay.md essay.bib default.yaml
 	pandoc -C essay.md -o essay.pdf \
 		--metadata-file=./default.yaml \
 		--pdf-engine=xelatex \
 		--template ./eisvogel.tex
 
-essay-swps.pdf: essay.md swps.yaml
+essay-swps.pdf: essay.md essay.bib swps.yaml
 	pandoc -C essay.md -o essay-swps.pdf \
 		--metadata-file=./swps.yaml \
 		--pdf-engine=xelatex \
