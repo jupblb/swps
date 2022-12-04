@@ -1,19 +1,22 @@
-essay.pdf: essay.md essay.bib default.yaml
-	pandoc -C essay.md -o essay.pdf \
+esej-psychologiczny.pdf: ./esej-psychologiczny/essay.md ./esej-psychologiczny/essay.bib ./default.yaml
+	pandoc -C ./esej-psychologiczny/essay.md -o ./esej-psychologiczny.pdf \
 		--metadata-file=./default.yaml \
 		--pdf-engine=xelatex \
 		--template ./eisvogel.tex
 
-essay-swps.pdf: essay.md essay.bib swps.yaml
-	pandoc -C essay.md -o essay-swps.pdf \
+esej-psychologiczny.swps.pdf: ./esej-psychologiczny/essay.md ./esej-psychologiczny/essay.bib ./swps.yaml
+	pandoc -C ./esej-psychologiczny/essay.md -o ./esej-psychologiczny.swps.pdf \
 		--metadata-file=./swps.yaml \
 		--pdf-engine=xelatex \
 		--template ./eisvogel.tex
 
+all: esej-psychologiczny.pdf esej-psychologiczny.swps.pdf
+
 clean:
-	rm -f essay.pdf essay-swps.pdf indent.log
+	rm -f *.pdf indent.log
 
 format:
-	pandoc -f markdown -s -t markdown --columns=80 essay.md -o essay.md
+	find . -type f -iname '*.md' \
+		-exec pandoc -f markdown -s -t markdown-raw_attribute --columns=80 {} -o {} \;
 
-.PHONY: clean format
+.PHONY: all clean format

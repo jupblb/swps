@@ -1,6 +1,5 @@
 ---
-bibliography: ./essay.bib
-csl: ./apa.csl
+bibliography: ./esej-psychologiczny/essay.bib
 date: 2022-11-12
 title: Extending attention span for children with ADHD using eye-tracking
   technology
@@ -49,7 +48,7 @@ century. It usually relies on having dedicated cameras that monitor pupils. See
 figure \ref{eye-tracking} for an example of visualisation of gathered data.
 
 ![An example of eye movement when reading text. [@eye-tracking-wiki]
-\label{eye-tracking}](./saccades.jpg){width="70%"}
+\label{eye-tracking}](./esej-psychologiczny/saccades.jpg){width="70%"}
 
 Such devices are quite expensive and not very flexible. Fortunately, in recent
 years special machine learning algorithms were developed with the same task in
@@ -82,7 +81,7 @@ important one. The most useful tools here are contrast and colors palette. A
 good example is the Windows XP shut down menu (Figure \ref{windows-xp}).
 
 ![Windows XP would gray out everything except the choice menu when shutting down
-computer. \label{windows-xp}](./windows-xp.jpg){width="70%"}
+computer. \label{windows-xp}](./esej-psychologiczny/windows-xp.jpg){width="70%"}
 
 A new study evaluated combining mentioned UX research with eye tracking
 technology to enhance children's ability to focus on reading text.

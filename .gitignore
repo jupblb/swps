@@ -2,12 +2,11 @@
 
 apa.csl
 eisvogel.tex
-saccades.jpg
 swps-logo.png
-windows-xp.jpg
 
 indent.log
 .ltex_ls_cache.json
+*.pdf
 
-essay.pdf
-essay-swps.pdf
+saccades.jpg
+windows-xp.jpg

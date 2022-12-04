@@ -34,8 +34,10 @@ pkgs.mkShell {
   shellHook   = ''
     ln -sfn ${apa-csl} apa.csl
     ln -sfn ${eisvogel} eisvogel.tex
-    ln -sfn ${saccades} saccades.jpg
     ln -sfn ${swps-logo} swps-logo.png
-    ln -sfn ${windows} windows-xp.jpg
+
+    # Esej psychologiczny
+    ln -sfn ${saccades} ./esej-psychologiczny/saccades.jpg
+    ln -sfn ${windows} ./esej-psychologiczny/windows-xp.jpg
   '';
 }
