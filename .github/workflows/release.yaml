@@ -1,0 +1,16 @@
+name: Release
+on:
+- push
+jobs:
+  pdfs:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: cachix/install-nix-action@v18
+      with:
+        nix_path: nixpkgs=channel:nixos-unstable
+    - run: nix-shell --run "make all"
+    - uses: softprops/action-gh-release@v1
+      with:
+        tag_name: latest
+        files: "*.pdf"
