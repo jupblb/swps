@@ -5,7 +5,8 @@ niewyksztalcone = pd4_regresja_liniowa %>%
   filter(wyksztalcenie_ekonomiczne == 0) %>%
   select(wyniki, wiedza_ekonomiczna)
 
-summary(lm(niewyksztalcone$wyniki ~ niewyksztalcone$wiedza_ekonomiczna))
+reg = lm(niewyksztalcone$wyniki ~ niewyksztalcone$wiedza_ekonomiczna)
+summary(reg)
 # Residuals:
 #     Min      1Q  Median      3Q     Max
 # -57.061  -9.927   0.039  11.775  48.118
@@ -20,3 +21,12 @@ summary(lm(niewyksztalcone$wyniki ~ niewyksztalcone$wiedza_ekonomiczna))
 # Residual standard error: 16.02 on 321 degrees of freedom
 # Multiple R-squared:  0.8261,	Adjusted R-squared:  0.8255
 # F-statistic:  1525 on 1 and 321 DF,  p-value: < 2.2e-16
+
+library(lm.beta)
+lm.beta(reg)
+# Call:
+# lm(formula = niewyksztalcone$wyniki ~ niewyksztalcone$wiedza_ekonomiczna)
+# 
+# Standardized Coefficients::
+#                        (Intercept) niewyksztalcone$wiedza_ekonomiczna 
+#                                 NA                           0.908895
