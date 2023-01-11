@@ -10,7 +10,19 @@ esej-psychologiczny.swps.pdf: ./esej-psychologiczny/essay.md ./esej-psychologicz
 		--pdf-engine=xelatex \
 		--template ./eisvogel.tex
 
-all: esej-psychologiczny.pdf esej-psychologiczny.swps.pdf
+psychologia-poznawcza-esej.pdf: ./psychologia-poznawcza/essay.md ./psychologia-poznawcza/essay.bib ./default.yaml
+	pandoc -V lang=pl -C ./psychologia-poznawcza/essay.md -o ./psychologia-poznawcza-esej.pdf \
+		--metadata-file=./default.yaml \
+		--pdf-engine=xelatex \
+		--template ./eisvogel.tex
+
+psychologia-poznawcza-esej.swps.pdf: ./psychologia-poznawcza/essay.md ./psychologia-poznawcza/essay.bib ./swps.yaml
+	pandoc -V lang=pl -C ./psychologia-poznawcza/essay.md -o ./psychologia-poznawcza-esej.swps.pdf \
+		--metadata-file=./swps.yaml \
+		--pdf-engine=xelatex \
+		--template ./eisvogel.tex
+
+all: esej-psychologiczny.pdf esej-psychologiczny.swps.pdf psychologia-poznawcza-esej.pdf psychologia-poznawcza-esej.swps.pdf
 
 clean:
 	rm -f *.pdf indent.log
